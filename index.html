@@ -11,16 +11,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: radial-gradient(circle at center, #0f172a, #020617);
+      background: radial-gradient(circle at center, #071133, #020617 70%);
       overflow: hidden;
-      font-family: "Microsoft YaHei";
+      font-family: "Microsoft YaHei", sans-serif;
       color: white;
     }
 
     .container {
       position: relative;
-      width: 420px;
-      height: 420px;
+      width: 760px;
+      height: 760px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -32,70 +32,119 @@
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid #38bdf8;
-      box-shadow: 0 0 30px rgba(56,189,248,0.8);
-      z-index: 2;
+      box-shadow: 0 0 30px rgba(56,189,248,0.8), 0 0 80px rgba(56,189,248,0.35);
+      z-index: 5;
       background: #000;
     }
 
-    .text {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      animation: rotate 10s linear infinite;
-    }
-
-    .text span {
+    .ring {
       position: absolute;
       left: 50%;
       top: 50%;
-      transform-origin: 0 190px;
-      font-size: 18px;
-      color: #38bdf8;
-      text-shadow: 0 0 10px rgba(56,189,248,0.8);
-      white-space: pre;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      pointer-events: none;
     }
 
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    .ring-1 {
+      width: 430px;
+      height: 430px;
+      animation: spin1 10s linear infinite;
+    }
+
+    .ring-2 {
+      width: 560px;
+      height: 560px;
+      animation: spin2 14s linear infinite;
+    }
+
+    .ring-3 {
+      width: 690px;
+      height: 690px;
+      animation: spin3 18s linear infinite;
+    }
+
+    .ring span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      color: #38bdf8;
+      text-shadow: 0 0 8px rgba(56,189,248,0.9), 0 0 20px rgba(56,189,248,0.6);
+      white-space: pre;
+      font-weight: 600;
+    }
+
+    .ring-1 span {
+      font-size: 22px;
+      transform-origin: 0 150px;
+    }
+
+    .ring-2 span {
+      font-size: 21px;
+      transform-origin: 0 210px;
+    }
+
+    .ring-3 span {
+      font-size: 20px;
+      transform-origin: 0 275px;
+    }
+
+    @keyframes spin1 {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @keyframes spin2 {
+      from { transform: translate(-50%, -50%) rotate(360deg); }
+      to { transform: translate(-50%, -50%) rotate(0deg); }
+    }
+
+    @keyframes spin3 {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
     }
 
     .hint {
       position: absolute;
-      bottom: -60px;
+      bottom: 26px;
       width: 100%;
       text-align: center;
-      color: #9ca3af;
-      font-size: 14px;
+      color: #c7d2fe;
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-shadow: 0 0 12px rgba(56,189,248,0.45);
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="ring ring-3" id="ring3"></div>
+    <div class="ring ring-2" id="ring2"></div>
+    <div class="ring ring-1" id="ring1"></div>
 
-    <!-- 中间视频：去掉 muted，加入 controls；若浏览器不允许带声音自动播放，用户点一下即可出声 -->
     <video class="center-video" controls autoplay loop playsinline>
       <source src="mb.mp4" type="video/mp4">
       你的浏览器不支持视频播放
     </video>
 
-    <!-- 环绕文字 -->
-    <div class="text" id="text"></div>
-
-    <div class="hint">如未自动出声，请点击视频或使用控制条开启声音</div>
-
+    <div class="hint">请点击马博（点击视频开启声音）</div>
   </div>
 
   <script>
-    const content = "帅哥太帅了 无敌帅气 颜值爆表 太离谱了 真的帅 ";
-    const textContainer = document.getElementById("text");
-
-    for (let i = 0; i < content.length; i++) {
-      const span = document.createElement("span");
-      span.innerText = content[i];
-      span.style.transform = `rotate(${i * (360 / content.length)}deg)`;
-      textContainer.appendChild(span);
+    function fillRing(id, content) {
+      const ring = document.getElementById(id);
+      const len = content.length;
+      for (let i = 0; i < len; i++) {
+        const span = document.createElement('span');
+        span.innerText = content[i];
+        span.style.transform = `rotate(${i * (360 / len)}deg)`;
+        ring.appendChild(span);
+      }
     }
+
+    fillRing('ring1', '马博太帅了 马博无敌帅气 马博颜值爆表 马博真的太帅了 帅帅帅帅帅 ');
+    fillRing('ring2', '马博宇宙第一帅 马博绝世帅哥 马博气质无敌 马博越看越帅 马博魅力拉满 马博帅得离谱 ');
+    fillRing('ring3', '马博就是最帅的 马博全场焦点 马博天生主角脸 马博光芒四射 马博真的好帅 马博帅到发光 ');
   </script>
 </body>
 </html>
