@@ -3,164 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>我的网站演示</title>
+  <title>帅哥展示页</title>
   <style>
-    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
-      background: linear-gradient(135deg, #eef4ff 0%, #f8fbff 55%, #ffffff 100%);
-      color: #1f2937;
-    }
-    .container {
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
-      padding: 24px;
+      align-items: center;
+      background: radial-gradient(circle at center, #0f172a, #020617);
+      overflow: hidden;
+      font-family: "Microsoft YaHei";
+      color: white;
     }
-    .card {
-      width: 100%;
-      max-width: 900px;
-      background: rgba(255,255,255,0.92);
-      border: 1px solid #dbe7ff;
-      border-radius: 24px;
-      padding: 48px 36px;
-      box-shadow: 0 18px 50px rgba(27, 67, 144, 0.12);
-      backdrop-filter: blur(8px);
-    }
-    .tag {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #e8f0ff;
-      color: #1d4ed8;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 18px;
-    }
-    h1 {
-      margin: 0 0 16px;
-      font-size: clamp(32px, 5vw, 52px);
-      line-height: 1.15;
-    }
-    p {
-      margin: 0;
-      font-size: 18px;
-      line-height: 1.8;
-      color: #4b5563;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 32px;
-    }
-    .item {
-      padding: 22px;
-      border-radius: 18px;
-      background: #f8fbff;
-      border: 1px solid #dfe9ff;
-    }
-    .item h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
-      color: #111827;
-    }
-    .item p {
-      font-size: 15px;
-      line-height: 1.7;
-    }
-    .actions {
-      margin-top: 34px;
+
+    .container {
+      position: relative;
+      width: 400px;
+      height: 400px;
       display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
     }
-    .btn {
-      border: none;
-      cursor: pointer;
-      padding: 14px 22px;
-      border-radius: 14px;
-      font-size: 16px;
-      font-weight: 600;
-      transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+
+    .center-video {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #38bdf8;
+      box-shadow: 0 0 30px rgba(56,189,248,0.8);
+      z-index: 2;
     }
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(29, 78, 216, 0.18);
+
+    .text {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation: rotate 10s linear infinite;
     }
-    .primary {
-      background: #2563eb;
-      color: #fff;
+
+    .text span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform-origin: 0 180px;
+      font-size: 18px;
+      color: #38bdf8;
+      text-shadow: 0 0 10px rgba(56,189,248,0.8);
     }
-    .secondary {
-      background: #eef4ff;
-      color: #1d4ed8;
-    }
-    .footer {
-      margin-top: 30px;
-      font-size: 14px;
-      color: #6b7280;
-    }
-    .message {
-      margin-top: 18px;
-      padding: 14px 16px;
-      border-radius: 14px;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      color: #1e40af;
-      display: none;
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="card">
-      <div class="tag">网站演示版本</div>
-      <h1>这是一个可以继续扩展的公开网站雏形</h1>
-      <p>
-        这是一个单文件静态网页示例，适合先快速测试“别人通过链接访问”的效果。
-        后续可以在这个基础上继续添加项目介绍、图片展示、功能模块、表单提交和数据接口。
-      </p>
 
-      <div class="grid">
-        <div class="item">
-          <h3>页面展示</h3>
-          <p>支持标题、简介、图片、按钮、分区内容等基础网页结构。</p>
-        </div>
-        <div class="item">
-          <h3>交互效果</h3>
-          <p>支持按钮点击、弹窗提示、跳转链接、简单数据输入等前端交互。</p>
-        </div>
-        <div class="item">
-          <h3>可公开访问</h3>
-          <p>把这个 HTML 文件部署到 GitHub Pages、Vercel 或 Netlify 后即可生成公开链接。</p>
-        </div>
-      </div>
+    <!-- 中间视频 -->
+    <video class="center-video" autoplay muted loop playsinline>
+      <source src="mb.mp4" type="video/mp4">
+      你的浏览器不支持视频播放
+    </video>
 
-      <div class="actions">
-        <button class="btn primary" onclick="showMessage()">点击测试交互</button>
-        <button class="btn secondary" onclick="scrollToFooter()">查看说明</button>
-      </div>
+    <!-- 环绕文字 -->
+    <div class="text" id="text"></div>
 
-      <div id="msg" class="message">测试成功：这个网页已经具备最基础的前端交互能力。</div>
-
-      <div class="footer" id="footer">
-        当前版本适合先做演示。若你确定主题，我可以继续把它扩展成正式可部署网站。
-      </div>
-    </div>
   </div>
 
   <script>
-    function showMessage() {
-      const msg = document.getElementById('msg');
-      msg.style.display = 'block';
-      msg.textContent = '测试成功：这个网页已经具备最基础的前端交互能力。';
-    }
+    const content = "帅哥太帅了 无敌帅气 颜值爆表 太离谱了 真的帅 ";
+    const textContainer = document.getElementById("text");
 
-    function scrollToFooter() {
-      document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
+    for (let i = 0; i < content.length; i++) {
+      const span = document.createElement("span");
+      span.innerText = content[i];
+      span.style.transform = `rotate(${i * (360 / content.length)}deg)`;
+      textContainer.appendChild(span);
     }
   </script>
 </body>
