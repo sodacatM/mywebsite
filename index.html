@@ -19,22 +19,22 @@
 
     .container {
       position: relative;
-      width: 900px;
-      height: 900px;
+      width: 760px;
+      height: 760px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
     .center-video {
-      width: 260px;
-      height: 260px;
+      transform: rotate(90deg) scale(1.18);
+      width: 220px;
+      height: 300px;
       border-radius: 50%;
       object-fit: cover;
-      transform: rotate(-90deg) scale(1.2);
       border: 4px solid #38bdf8;
-      box-shadow: 0 0 30px rgba(56,189,248,0.8), 0 0 100px rgba(56,189,248,0.4);
-      z-index: 10;
+      box-shadow: 0 0 30px rgba(56,189,248,0.8), 0 0 80px rgba(56,189,248,0.35);
+      z-index: 5;
       background: #000;
     }
 
@@ -47,28 +47,48 @@
       pointer-events: none;
     }
 
-    /* 五圈环绕 */
-    .ring-1 { width: 400px; height: 400px; animation: spin1 8s linear infinite; }
-    .ring-2 { width: 520px; height: 520px; animation: spin2 12s linear infinite; }
-    .ring-3 { width: 640px; height: 640px; animation: spin3 16s linear infinite; }
-    .ring-4 { width: 760px; height: 760px; animation: spin2 20s linear infinite; }
-    .ring-5 { width: 880px; height: 880px; animation: spin1 24s linear infinite; }
+    .ring-1 {
+      width: 430px;
+      height: 430px;
+      animation: spin1 10s linear infinite;
+    }
+
+    .ring-2 {
+      width: 560px;
+      height: 560px;
+      animation: spin2 14s linear infinite;
+    }
+
+    .ring-3 {
+      width: 690px;
+      height: 690px;
+      animation: spin3 18s linear infinite;
+    }
 
     .ring span {
       position: absolute;
       left: 50%;
       top: 50%;
       color: #38bdf8;
-      text-shadow: 0 0 10px rgba(56,189,248,1), 0 0 25px rgba(56,189,248,0.6);
+      text-shadow: 0 0 8px rgba(56,189,248,0.9), 0 0 20px rgba(56,189,248,0.6);
       white-space: pre;
-      font-weight: bold;
+      font-weight: 600;
     }
 
-    .ring-1 span { font-size: 24px; transform-origin: 0 140px; }
-    .ring-2 span { font-size: 22px; transform-origin: 0 200px; }
-    .ring-3 span { font-size: 20px; transform-origin: 0 260px; }
-    .ring-4 span { font-size: 18px; transform-origin: 0 320px; }
-    .ring-5 span { font-size: 16px; transform-origin: 0 380px; }
+    .ring-1 span {
+      font-size: 22px;
+      transform-origin: 0 150px;
+    }
+
+    .ring-2 span {
+      font-size: 21px;
+      transform-origin: 0 210px;
+    }
+
+    .ring-3 span {
+      font-size: 20px;
+      transform-origin: 0 275px;
+    }
 
     @keyframes spin1 {
       from { transform: translate(-50%, -50%) rotate(0deg); }
@@ -87,20 +107,18 @@
 
     .hint {
       position: absolute;
-      bottom: 30px;
+      bottom: 26px;
       width: 100%;
       text-align: center;
       color: #c7d2fe;
-      font-size: 20px;
-      text-shadow: 0 0 12px rgba(56,189,248,0.6);
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-shadow: 0 0 12px rgba(56,189,248,0.45);
     }
   </style>
 </head>
 <body>
   <div class="container">
-
-    <div class="ring ring-5" id="ring5"></div>
-    <div class="ring ring-4" id="ring4"></div>
     <div class="ring ring-3" id="ring3"></div>
     <div class="ring ring-2" id="ring2"></div>
     <div class="ring ring-1" id="ring1"></div>
@@ -111,7 +129,6 @@
     </video>
 
     <div class="hint">请点击马博（点击视频开启声音）</div>
-
   </div>
 
   <script>
@@ -126,15 +143,9 @@
       }
     }
 
-    const text1 = '马博太帅了 马博无敌帅气 马博颜值爆表 帅帅帅帅帅 ';
-    const text2 = '马博宇宙第一帅 马博绝世帅哥 马博气质无敌 马博魅力拉满 ';
-    const text3 = '马博就是最帅的 马博全场焦点 马博光芒四射 马博帅到发光 ';
-
-    fillRing('ring1', text1);
-    fillRing('ring2', text2);
-    fillRing('ring3', text3);
-    fillRing('ring4', text2 + text1);
-    fillRing('ring5', text3 + text2);
+    fillRing('ring1', '马博太帅了 马博无敌帅气 马博颜值爆表 马博真的太帅了 帅帅帅帅帅 ');
+    fillRing('ring2', '马博宇宙第一帅 马博绝世帅哥 马博气质无敌 马博越看越帅 马博魅力拉满 马博帅得离谱 ');
+    fillRing('ring3', '马博就是最帅的 马博全场焦点 马博天生主角脸 马博光芒四射 马博真的好帅 马博帅到发光 ');
   </script>
 </body>
 </html>
