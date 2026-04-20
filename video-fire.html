@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>宿舍中发生火灾怎么逃生 - 大学生安全教育平台</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      min-height: 100vh;
+      color: #1f2937;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(255,255,255,0.14), transparent 22%),
+        radial-gradient(circle at 82% 10%, rgba(255,255,255,0.08), transparent 20%),
+        linear-gradient(135deg, #eb8b69 0%, #e78361 48%, #e17758 100%);
+      padding: 28px;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .page {
+      width: min(1280px, 96%);
+      margin: 0 auto;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 24px 60px rgba(104, 43, 26, 0.16);
+      backdrop-filter: blur(10px);
+      min-height: calc(100vh - 56px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(255,255,255,0.08), rgba(255,255,255,0) 34%),
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+
+    .topbar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 30px;
+      color: #fff;
+    }
+
+    .left-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navs {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.20);
+      color: #fff;
+      transition: 0.25s ease;
+    }
+
+    .nav-btn:hover { background: rgba(255,255,255,0.18); }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 8px 30px 32px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+    }
+
+    .video-card, .info-card {
+      background: rgba(255,255,255,0.92);
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.42);
+      box-shadow: 0 18px 36px rgba(107, 48, 29, 0.10);
+    }
+
+    .video-card {
+      overflow: hidden;
+    }
+
+    .video-stage {
+      height: 460px;
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(235,139,105,0.18), rgba(225,119,88,0.10)),
+        repeating-linear-gradient(
+          135deg,
+          rgba(148, 163, 184, 0.12),
+          rgba(148, 163, 184, 0.12) 12px,
+          rgba(255,255,255,0.36) 12px,
+          rgba(255,255,255,0.36) 24px
+        );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9a634e;
+      text-align: center;
+      font-size: 18px;
+      padding: 24px;
+    }
+
+    .play {
+      position: absolute;
+      width: 94px;
+      height: 94px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.78);
+      box-shadow: 0 16px 28px rgba(117, 61, 41, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .play::before {
+      content: "";
+      margin-left: 6px;
+      width: 0; height: 0;
+      border-top: 16px solid transparent;
+      border-bottom: 16px solid transparent;
+      border-left: 24px solid #d96c48;
+    }
+
+    .video-body {
+      padding: 24px 24px 28px;
+    }
+
+    .label {
+      display: inline-flex;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(235,139,105,0.14);
+      color: #d26540;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .title {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.18;
+      color: #182132;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .desc {
+      color: #6b7280;
+      line-height: 1.95;
+      font-size: 16px;
+    }
+
+    .info-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .info-block {
+      padding: 18px 18px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #fff7f4 0%, #fff 100%);
+      border: 1px solid #f3ddd4;
+    }
+
+    .info-block h3 {
+      font-size: 18px;
+      color: #182132;
+      margin-bottom: 10px;
+    }
+
+    .info-block p, .info-block li {
+      color: #6b7280;
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    .info-block ul {
+      padding-left: 18px;
+    }
+
+    @media (max-width: 960px) {
+      .content { grid-template-columns: 1fr; }
+      .video-stage { height: 340px; }
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 14px; }
+      .page { width: 100%; }
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 18px;
+      }
+      .content { padding: 4px 18px 18px; }
+      .title { font-size: 28px; }
+      .desc { font-size: 15px; }
+      .video-stage { height: 250px; font-size: 15px; }
+      .play { width: 74px; height: 74px; }
+      .play::before {
+        border-top-width: 12px;
+        border-bottom-width: 12px;
+        border-left-width: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div class="left-meta">
+        <div class="icon">▶</div>
+        <span>大学生安全教育平台 · 科普视频</span>
+      </div>
+      <div class="navs">
+        <a class="nav-btn" href="video-list.html">返回视频列表</a>
+        <a class="nav-btn" href="index(4).html">返回首页</a>
+      </div>
+    </div>
+
+    <section class="content">
+      <div class="video-card">
+        <div class="video-stage">
+          <div class="play"></div>
+          视频占位区<br />后续可替换为宿舍火灾逃生科普视频
+        </div>
+        <div class="video-body">
+          <div class="label">视频 B</div>
+          <h1 class="title">宿舍中发生火灾怎么逃生</h1>
+          <p class="desc">
+            大学宿舍是人员密集场所，易燃可燃物多，火灾隐患潜伏，一旦发生火灾事故，
+            将对大学生的生命财产安全构成严重威胁，为保障宿舍消防安全，掌握防火知识非常重要。
+          </p>
+        </div>
+      </div>
+
+      <aside class="info-card">
+        <div class="info-block">
+          <h3>页面说明</h3>
+          <p>本页以视频展示为主，当前视频区域为预留占位，后续可以直接嵌入正式视频文件、B站链接或本地播放器。</p>
+        </div>
+
+        <div class="info-block">
+          <h3>可补充的重点内容</h3>
+          <ul>
+            <li>发现火情后的第一时间处置方法</li>
+            <li>宿舍楼内疏散路线识别与有序撤离</li>
+            <li>烟雾环境下的自我保护与呼救方式</li>
+          </ul>
+        </div>
+
+        <div class="info-block">
+          <h3>素材建议</h3>
+          <p>可在此页右侧或下方继续增加逃生流程图、灭火器使用示意图、宿舍楼通道安全提示等配图内容。</p>
+        </div>
+      </aside>
+    </section>
+  </div>
+</body>
+</html>
