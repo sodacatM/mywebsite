@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>宿舍中发生火灾怎么逃生 - 大学生安全教育平台</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      min-height: 100vh;
+      color: #1f2937;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(255,255,255,0.14), transparent 22%),
+        radial-gradient(circle at 82% 10%, rgba(255,255,255,0.08), transparent 20%),
+        linear-gradient(135deg, #eb8b69 0%, #e78361 48%, #e17758 100%);
+      padding: 28px;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .page {
+      width: min(1280px, 96%);
+      margin: 0 auto;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 24px 60px rgba(104, 43, 26, 0.16);
+      backdrop-filter: blur(10px);
+      min-height: calc(100vh - 56px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(255,255,255,0.08), rgba(255,255,255,0) 34%),
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+
+    .topbar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 30px;
+      color: #fff;
+    }
+
+    .left-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navs {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.20);
+      color: #fff;
+      transition: 0.25s ease;
+    }
+
+    .nav-btn:hover { background: rgba(255,255,255,0.18); }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 8px 30px 32px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+    }
+
+    .video-card, .info-card {
+      background: rgba(255,255,255,0.92);
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.42);
+      box-shadow: 0 18px 36px rgba(107, 48, 29, 0.10);
+    }
+
+    .video-card {
+      overflow: hidden;
+    }
+
+    .video-stage {
+      height: 460px;
+      position: relative;
+      background: #0f172a;
+      overflow: hidden;
+    }
+
+    .video-stage video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .video-body {
+      padding: 24px 24px 28px;
+    }
+
+    .label {
+      display: inline-flex;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(235,139,105,0.14);
+      color: #d26540;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .title {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.18;
+      color: #182132;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .desc {
+      color: #6b7280;
+      line-height: 1.95;
+      font-size: 16px;
+    }
+
+    .info-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .info-block {
+      padding: 18px 18px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #fff7f4 0%, #fff 100%);
+      border: 1px solid #f3ddd4;
+    }
+
+    .info-block h3 {
+      font-size: 18px;
+      color: #182132;
+      margin-bottom: 10px;
+    }
+
+    .info-block p, .info-block li {
+      color: #6b7280;
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    .info-block ul {
+      padding-left: 18px;
+    }
+
+    @media (max-width: 960px) {
+      .content { grid-template-columns: 1fr; }
+      .video-stage { height: 340px; }
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 14px; }
+      .page { width: 100%; }
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 18px;
+      }
+      .content { padding: 4px 18px 18px; }
+      .title { font-size: 28px; }
+      .desc { font-size: 15px; }
+      .video-stage { height: 250px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div class="left-meta">
+        <div class="icon">▶</div>
+        <span>大学生安全教育平台 · 科普视频</span>
+      </div>
+      <div class="navs">
+        <a class="nav-btn" href="video-list.html">返回视频列表</a>
+        <a class="nav-btn" href="index.html">返回首页</a>
+      </div>
+    </div>
+
+    <section class="content">
+      <div class="video-card">
+        <div class="video-stage">
+          <video controls preload="metadata">
+            <source src="1.mp4" type="video/mp4" />
+            您的浏览器不支持 HTML5 视频播放。
+          </video>
+        </div>
+
+        <div class="video-body">
+          <div class="label">视频 B</div>
+          <h1 class="title">提·拔·握·压:</h1>
+          <h1 class="title">灭火器四步口诀教学</h1>
+          <p class="desc">
+            大学宿舍是人员密集场所，易燃可燃物多，火灾隐患潜伏，一旦发生火灾事故，
+            将对大学生的生命财产安全构成严重威胁，为保障宿舍消防安全，掌握防火知识非常重要。
+          </p>
+        </div>
+      </div>
+
+      <aside class="info-card">
+        <div class="info-block">
+          <h3>内容简介</h3>
+          <p>一个违规电煮锅，一场宿舍火灾，引出每个人都该掌握的救命技能。视频从一名男生在寝室偷偷煮泡面的场景切入，插座突然冒火花，火势迅速蔓延，紧张感瞬间拉满。
+危急时刻，他想起走廊的灭火器，完整演示了干粉灭火器的正确使用流程：提起灭火器、拔掉铅封和保险销、握住喷管对准火焰根部、压下压把左右扫射。每一步都配有醒目的动态字幕和动作特写，简单清晰，一看就会。
+结尾以“提·拔·握·压”四字口诀收束，朗朗上口，方便记忆。宿舍禁用大功率电器，但学会用灭火器，关键时刻能救命。
+</p>
+        </div>
+
+
+        <div class="info-block">
+          <h3>页面说明</h3>
+          <p>本页以视频展示为主，当前视频区域为预留占位，后续可以直接嵌入正式视频文件、B站链接或本地播放器。</p>
+        </div>
+      </aside>
+    </section>
+  </div>
+</body>
+</html>

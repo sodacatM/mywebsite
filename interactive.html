@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>互动式科普 - 大学生安全教育平台</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 14% 12%, rgba(255,255,255,.18), transparent 24%),
+        radial-gradient(circle at 82% 16%, rgba(255,255,255,.08), transparent 22%),
+        linear-gradient(135deg,#eb8b69 0%,#e78361 48%,#e17758 100%);
+      color:#1f2937;
+      padding:32px 20px 40px;
+    }
+    a{text-decoration:none;color:inherit}
+    .shell{width:min(1300px,95vw);margin:0 auto}
+    .hero{
+      display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:28px
+    }
+    .badge{display:inline-flex;gap:10px;align-items:center;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:13px;margin-bottom:14px;backdrop-filter:blur(8px)}
+    .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 12px rgba(255,255,255,.75)}
+    h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin-bottom:10px;color:#fff;font-weight:900}
+    .desc{max-width:760px;line-height:1.9;color:rgba(255,255,255,.92);font-size:16px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:12px 18px;border-radius:14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;backdrop-filter:blur(8px);transition:.25s}
+    .btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.18)}
+    .panel{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:30px;padding:26px;backdrop-filter:blur(10px);box-shadow:0 24px 55px rgba(103,31,14,.12)}
+    .title-row{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+    .title-row h2{font-size:26px;color:#fff}
+    .title-row p{font-size:14px;color:rgba(255,255,255,.86)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card-link{display:block;height:100%;cursor:pointer}
+    .card{min-height:540px;height:100%;border-radius:26px;overflow:hidden;background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.65);box-shadow:0 18px 36px rgba(61,24,15,.10);transition:.28s;position:relative}
+    .card-link:hover .card{transform:translateY(-6px)}
+    .poster{
+      height:100%;
+      padding:22px;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      overflow:hidden;
+    }
+    .poster::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(19,58,46,.10), rgba(19,58,46,.62));
+    }
+    .serial{position:absolute;top:20px;left:20px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;z-index:2}
+    .shade{position:absolute;left:18px;right:18px;bottom:18px;border-radius:22px;padding:20px;background:linear-gradient(180deg, rgba(25,51,43,.04), rgba(21,55,43,.82));backdrop-filter:blur(8px);z-index:2}
+    .shade h3{font-size:24px;line-height:1.35;color:#fff;margin-bottom:10px}
+    .shade p{font-size:14px;line-height:1.85;color:rgba(255,255,255,.84)}
+    .coming{
+      height:100%;padding:22px;background:
+      linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04)),
+      linear-gradient(160deg, #ef9c7f 0%, #df7d5d 100%);
+      position:relative;display:flex;align-items:center;justify-content:center
+    }
+    .coming::before{content:"";position:absolute;inset:18px;border:1.5px dashed rgba(255,255,255,.46);border-radius:20px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.78)}
+    .coming-box{position:relative;z-index:2;text-align:center;color:#fff;padding:28px}
+    .coming-box h3{font-size:34px;letter-spacing:2px;margin-bottom:14px}
+    .coming-box p{font-size:15px;line-height:1.9;color:rgba(255,255,255,.88)}
+    @media (max-width:1024px){.grid{grid-template-columns:1fr}.card{min-height:460px}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="hero">
+      <div>
+        <div class="badge">安全教育 · 互动体验专区</div>
+        <h1>互动式科普</h1>
+        <p class="desc">通过故事化、互动化与场景化的内容组织方式，增强安全教育的沉浸感和记忆点。页面为竖版H5，适配多种设备。（当前版本为便于演示对于互动路径并无具体规定，评委可通过直接下滑的方式浏览全部页面）</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="index.html">返回首页</a>
+        <a class="btn" href="video-list.html">科普视频</a>
+        <a class="btn" href="events.html">线下活动</a>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="title-row">
+        <h2>互动内容列表</h2>
+        <p>当前保留 2 个正式入口与 1 个预留位</p>
+      </div>
+
+      <div class="grid">
+        <a class="card-link" href="interactive-mountain.html">
+          <div class="card">
+            <div class="poster" style="background-image:url('4.jpg');">
+              <div class="serial">D</div>
+              <div class="shade">
+                <h3>雪域驰援：<br>跨越17小时的生死营救 H5</h3>
+                <p>以户外情境为引导，围绕突发风险识别、求救方式选择与应急处置流程开展互动式安全教育展示。</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="card-link" href="http://h5.founderfx.cn/h/v/Aa1dl9" target="_blank" rel="noopener noreferrer">
+          <div class="card">
+            <div class="poster" style="background-image:url('5.jpg');">
+              <div class="serial">E</div>
+              <div class="shade">
+                <h3>擅长伪装的田间刺客：<br>防范外来物种入侵科普 H5</h3>
+                <p>聚焦农业与生态安全场景，以图文互动形式帮助用户识别外来物种风险并理解基本防范方法。</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <div class="card">
+          <div class="coming">
+            <div class="coming-box">
+              <h3>敬请期待</h3>
+              <p>后续可继续扩展校园实验安全、地震避险、网络安全等互动式安全教育专题内容。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

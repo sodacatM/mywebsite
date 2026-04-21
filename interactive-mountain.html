@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>力加山救援行动 - 大学生安全教育平台</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;
+      min-height:100vh;
+      color:#1f2937;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(255,255,255,0.14), transparent 22%),
+        radial-gradient(circle at 82% 10%, rgba(255,255,255,0.08), transparent 20%),
+        linear-gradient(135deg, #eb8b69 0%, #e78361 48%, #e17758 100%);
+      padding:28px;
+    }
+    a{text-decoration:none;color:inherit}
+    .page{width:min(1320px,96%);margin:0 auto;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.18);box-shadow:0 24px 60px rgba(104,43,26,0.16);backdrop-filter:blur(10px);min-height:calc(100vh - 56px);overflow:hidden;position:relative}
+    .page::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg, rgba(255,255,255,0.08), rgba(255,255,255,0) 34%), linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));pointer-events:none}
+    .topbar{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:24px 30px;color:#fff;gap:12px;flex-wrap:wrap}
+    .left-meta{display:flex;align-items:center;gap:12px;font-weight:700}
+    .icon{width:40px;height:40px;border-radius:14px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.22);display:flex;align-items:center;justify-content:center}
+    .navs{display:flex;gap:12px;flex-wrap:wrap}
+    .nav-btn{padding:11px 18px;border-radius:999px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.20);color:#fff;transition:0.25s ease}
+    .nav-btn:hover{background:rgba(255,255,255,0.18)}
+    .content{position:relative;z-index:2;padding:8px 30px 32px;display:grid;grid-template-columns:1.3fr .7fr;gap:24px}
+    .play-card,.info-card{background:rgba(255,255,255,0.92);border-radius:28px;border:1px solid rgba(255,255,255,0.42);box-shadow:0 18px 36px rgba(107,48,29,0.10)}
+    .play-card{overflow:hidden}
+    .stage{height:560px;position:relative;background:#0f172a}
+    .stage iframe{width:100%;height:100%;border:0;display:block;background:#fff}
+    .play-body{padding:24px 24px 28px}
+    .label{display:inline-flex;padding:8px 14px;border-radius:999px;background:rgba(235,139,105,0.14);color:#d26540;font-size:13px;font-weight:700;margin-bottom:16px}
+    .title{font-size:clamp(28px,4vw,42px);line-height:1.18;color:#182132;font-weight:900;margin-bottom:16px}
+    .desc{color:#6b7280;line-height:1.95;font-size:16px}
+    .info-card{padding:24px;display:flex;flex-direction:column;gap:18px}
+    .info-block{padding:18px;border-radius:20px;background:linear-gradient(180deg, #fff7f4 0%, #fff 100%);border:1px solid #f3ddd4}
+    .info-block h3{font-size:18px;color:#182132;margin-bottom:10px}
+    .info-block p,.info-block li{color:#6b7280;line-height:1.9;font-size:15px}
+    .info-block ul{padding-left:18px}
+    .ext-link{display:inline-flex;margin-top:10px;padding:10px 14px;border-radius:12px;background:#f7ede8;color:#c85d39;font-weight:700}
+    @media (max-width:960px){.content{grid-template-columns:1fr}.stage{height:420px}}
+    @media (max-width:640px){body{padding:14px}.page{width:100%}.topbar{padding:18px}.content{padding:4px 18px 18px}.title{font-size:28px}.desc{font-size:15px}.stage{height:360px}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div class="left-meta">
+        <div class="icon">H5</div>
+        <span>大学生安全教育平台 · 互动式科普</span>
+      </div>
+      <div class="navs">
+        <a class="nav-btn" href="interactive.html">返回互动列表</a>
+        <a class="nav-btn" href="index.html">返回首页</a>
+      </div>
+    </div>
+
+    <section class="content">
+      <div class="play-card">
+        <div class="stage">
+          <iframe src="https://4.u.h5mc.com/c/tdzq/ezmw/index.html" title="力加山救援行动互动H5" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="play-body">
+          <div class="label">互动 D</div>
+          <h1 class="title">力加山救援行动 · 户外安全科普 H5</h1>
+          <p class="desc">页面左侧直接嵌入互动 H5，便于在答辩展示中现场体验完整内容。若本地浏览器对第三方网页嵌入有限制，可使用右侧提供的外链按钮在新窗口打开。</p>
+        </div>
+      </div>
+
+      <aside class="info-card">
+        <div class="info-block">
+          <h3>内容简介</h3>
+          <p>本项目以 2026 年青甘两省达力加山联合救援真实事件为原型，打造户外应急安全科普互动 H5。作品采用被困驴友与救援人员双视角叙事结构，通过轻量化交互设计，完整还原 17 小时跨省协同救援流程，拆解高海拔户外禁区风险、遇险科学自救、专业救援规范等核心安全知识点。</p>
+        </div>
+
+        <div class="info-block">
+          <h3>展示说明</h3>
+          <p>本页采用“左侧互动展示 + 右侧图文说明”的结构，整体风格与视频详情页保持一致，便于统一网站视觉。互动内容适合用于答辩现场演示、网页展示与作品集归档。</p>
+          <a class="ext-link" href="https://4.u.h5mc.com/c/tdzq/ezmw/index.html" target="_blank" rel="noopener noreferrer">新窗口打开互动作品</a>
+        </div>
+      </aside>
+    </section>
+  </div>
+</body>
+</html>
